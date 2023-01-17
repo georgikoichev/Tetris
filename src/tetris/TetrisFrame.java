@@ -118,7 +118,7 @@ public class TetrisFrame extends JFrame {
         setFocusable(true);
     }
 
-    private static void color(char[][] temp, Graphics g, int xSize, int ySize, int offSetX, int offSetY) {
+    private static void color(char[][] temp, Graphics g, int xSize, int ySize, int offsetX, int offsetY) {
         for (int i = 0; i < xSize; i++) {
             for (int j = 0; j < ySize; j++) {
                 switch (temp[i][j]){
@@ -132,7 +132,11 @@ public class TetrisFrame extends JFrame {
                     case '7' -> g.setColor(Color.MAGENTA);
                     default -> g.setColor(Color.WHITE);
                 }
-                g.fillRect(i * SQUARE_SIZE + offSetX, j * SQUARE_SIZE + offSetY, SQUARE_SIZE, SQUARE_SIZE);
+                g.fillRect(i * SQUARE_SIZE + offsetX, j * SQUARE_SIZE + offsetY, SQUARE_SIZE, SQUARE_SIZE);
+
+                g.setColor(Color.BLACK);
+                g.fillRect(i * SQUARE_SIZE + offsetX, offsetY, 1, ySize * SQUARE_SIZE);
+                g.fillRect(offsetX, j * SQUARE_SIZE + offsetY, xSize * SQUARE_SIZE, 1);
             }
         }
     }
