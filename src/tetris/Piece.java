@@ -170,7 +170,7 @@ public class Piece {
 		this.setRotation(this.getRotation() + 1);
 	}
 	public void moveDown() {
-		if (!(y == Tetris.BOARD_Y_SIZE-1)) {
+		if (!(y == TetrisBoard.BOARD_Y_SIZE-1)) {
 			this.y++;
 		}
 	}
@@ -182,7 +182,7 @@ public class Piece {
 	}
 
 	public void moveRight() {
-		if (!(x == Tetris.BOARD_X_SIZE-1)) {
+		if (!(x == TetrisBoard.BOARD_X_SIZE-1)) {
 			this.x++;
 		}
 	}
